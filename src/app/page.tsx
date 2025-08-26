@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { generateDreamStory } from '@/ai/flows/generate-dream-story';
 import { generateDreamArt } from '@/ai/flows/generate-dream-art';
