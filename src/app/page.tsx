@@ -18,6 +18,13 @@ export default function Home() {
   const [dreamArt, setDreamArt] = useState('');
   const { toast } = useToast();
 
+  useEffect(() => {
+    // This is to signal to the Farcaster client that the app is ready
+    if (window.parent !== window) {
+      window.parent.postMessage({ type: 'frame-ready' }, '*');
+    }
+  }, []);
+
   const handleGenerateDream = async () => {
     setStep('loading');
     try {
@@ -159,10 +166,3 @@ export default function Home() {
           )}
 
         </Card>
-        <footer className="text-center mt-8 text-muted-foreground text-sm">
-          <p>Powered by Genkit and Farcaster</p>
-        </footer>
-      </main>
-    </div>
-  );
-}
