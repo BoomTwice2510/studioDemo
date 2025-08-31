@@ -5,6 +5,10 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Dream Weaver',
   description: 'Create and mint collaborative "dream" NFTs based on your Farcaster activity.',
+  other: {
+    'fc:frame': 'vNext',
+    'og:image': 'https://firebasestudio-hosting-prod.web.app/images/farcaster-frame-og.png',
+  }
 };
 
 export default function RootLayout({
